@@ -3,145 +3,146 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>wedding archive</title>
+<title>婚礼影像</title>
 
 <style>
 body{
   margin:0;
-  background:#f4f4f4;
-  font-family:"PingFang SC","Helvetica Neue","Apple SD Gothic Neo",sans-serif;
+  background:#f5f5f5;
+  font-family:"PingFang SC","Microsoft YaHei","Apple SD Gothic Neo",sans-serif;
   display:flex;
   justify-content:center;
+  align-items:center;
   min-height:100vh;
   color:#222;
 }
 
-.page{
-  width:92%;
-  max-width:460px;
-  padding:28px 0;
-}
-
-/* 顶部 */
-.header{
+.wrap{
+  width:90%;
+  max-width:430px;
   text-align:center;
-  margin-bottom:18px;
 }
 
-.title{
-  font-size:16px;
-  letter-spacing:2px;
-}
-
-.sub{
-  font-size:11px;
-  opacity:0.45;
-  margin-top:4px;
-}
-
-/* 时间线风格 */
-.card{
-  background:#fff;
-  border-radius:18px;
-  padding:18px 16px;
-  margin-bottom:14px;
-  box-shadow:0 10px 24px rgba(0,0,0,0.05);
-  transition:0.2s;
-}
-
-.card:active{
-  transform:scale(0.99);
-}
-
-/* 左侧时间 */
-.time{
-  font-size:11px;
-  opacity:0.5;
-  margin-bottom:6px;
-}
-
-/* 标题 */
-.h1{
+/* 顶部轻标题 */
+.top{
   font-size:15px;
+  letter-spacing:1px;
   margin-bottom:4px;
 }
 
-/* 英文说明 */
-.en{
+.top-sub{
   font-size:11px;
   opacity:0.45;
-  margin-bottom:10px;
+  margin-bottom:18px;
 }
 
-/* 描述 */
-.desc{
-  font-size:12px;
-  opacity:0.7;
-  line-height:1.5;
-  margin-bottom:12px;
+/* 卡片 */
+.card{
+  background:#fff;
+  border-radius:20px;
+  padding:28px 18px;
+  box-shadow:0 10px 28px rgba(0,0,0,0.06);
+  animation:fade 0.6s ease-out;
 }
 
-/* 按钮变“观看入口” */
-.link{
-  display:inline-block;
-  padding:8px 12px;
-  font-size:12px;
-  border-radius:999px;
-  border:1px solid #ddd;
-  color:#333;
+/* 装饰 */
+.icon{
+  font-size:22px;
+  color:#d8a6a6;
+  margin-bottom:8px;
+}
+
+.title-cn{
+  font-size:17px;
+  margin-bottom:4px;
+}
+
+.title-en{
+  font-size:11px;
+  opacity:0.45;
+  letter-spacing:1px;
+  margin-bottom:14px;
+}
+
+/* 分割线 */
+.line{
+  width:36px;
+  height:1px;
+  background:#eee;
+  margin:14px auto;
+}
+
+/* 按钮 */
+.btn{
+  display:block;
+  margin:10px 0;
+  padding:13px;
+  border-radius:14px;
   text-decoration:none;
+  font-size:14px;
+  border:1px solid #eee;
   background:#fafafa;
+  color:#333;
+  transition:0.2s ease;
+}
+
+.btn:active{
+  transform:scale(0.98);
+  background:#f0f0f0;
+}
+
+/* 韩语点缀 */
+.ko{
+  font-size:10px;
+  opacity:0.35;
+  margin-top:14px;
 }
 
 /* 底部 */
 .footer{
-  text-align:center;
+  margin-top:16px;
   font-size:10px;
   opacity:0.35;
-  margin-top:18px;
   letter-spacing:1px;
+}
+
+/* 动画 */
+@keyframes fade{
+  from{opacity:0; transform:translateY(8px);}
+  to{opacity:1; transform:translateY(0);}
 }
 </style>
 </head>
 
 <body>
 
-<div class="page">
+<div class="wrap">
 
-  <div class="header">
-    <div class="title">婚礼影像记录 · wedding archive</div>
-    <div class="sub">a day we keep in memory</div>
-  </div>
+  <div class="top">婚礼影像 · wedding moments</div>
+  <div class="top-sub">thank you for coming · 감사합니다</div>
 
-  <!-- 视频1 -->
   <div class="card">
-    <div class="time">03:00</div>
-    <div class="h1">婚礼纪实</div>
-    <div class="en">wedding highlight film</div>
-    <div class="desc">
-      婚庆团队剪辑的现场记录，浓缩仪式与瞬间情绪。
-    </div>
-    <a class="link" href="https://weixin.qq.com/sph/App2bD5iXC" target="_blank">
-      观看影片
+
+    <div class="icon">♡</div>
+
+    <div class="title-cn">我们的婚礼</div>
+    <div class="title-en">our wedding day</div>
+
+    <div class="line"></div>
+
+    <a class="btn" href="https://weixin.qq.com/sph/App2bD5iXC" target="_blank">
+      婚礼纪实（3分钟）/ wedding highlight
     </a>
+
+    <a class="btn" href="https://weixin.qq.com/sph/A8GE2j928y" target="_blank">
+      家人时刻（7分钟）/ vows & songs
+    </a>
+
+    <div class="ko">함께해주셔서 감사합니다</div>
+
   </div>
 
-  <!-- 视频2 -->
-  <div class="card">
-    <div class="time">07:00</div>
-    <div class="h1">家人时刻</div>
-    <div class="en">vows & songs</div>
-    <div class="desc">
-      自行剪辑的完整片段，包含家长发言与祝歌片段。
-    </div>
-    <a class="link" href="https://weixin.qq.com/sph/A8GE2j928y" target="_blank">
-      观看影片
-    </a>
-  </div>
-
-  <div class="footer">
-    love · family · memory
-  </div>
+  <div class="footer">love · memory · thanks</div>
 
 </div>
 
