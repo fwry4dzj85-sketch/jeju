@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>our wedding</title>
+<title>婚礼影像</title>
 
 <style>
 body{
   margin:0;
-  background:#f6f6f6;
-  font-family:"Helvetica Neue","PingFang SC","Apple SD Gothic Neo",sans-serif;
+  background:#f5f5f5;
+  font-family:"PingFang SC","Microsoft YaHei","Apple SD Gothic Neo",sans-serif;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -17,44 +17,56 @@ body{
   color:#222;
 }
 
-.page{
+.wrap{
   width:90%;
-  max-width:420px;
+  max-width:430px;
   text-align:center;
 }
 
-/* 顶部标题 */
-.title{
-  font-size:16px;
-  letter-spacing:2px;
-  margin-bottom:6px;
-  opacity:0.85;
+/* 顶部轻标题 */
+.top{
+  font-size:15px;
+  letter-spacing:1px;
+  margin-bottom:4px;
 }
 
-.sub{
+.top-sub{
   font-size:11px;
-  opacity:0.4;
+  opacity:0.45;
   margin-bottom:18px;
 }
 
-/* 主卡片 */
+/* 卡片 */
 .card{
   background:#fff;
-  border-radius:18px;
-  padding:26px 18px;
-  box-shadow:0 12px 30px rgba(0,0,0,0.06);
+  border-radius:20px;
+  padding:28px 18px;
+  box-shadow:0 10px 28px rgba(0,0,0,0.06);
+  animation:fade 0.6s ease-out;
 }
 
-/* 简洁符号 */
+/* 装饰 */
 .icon{
   font-size:22px;
+  color:#d8a6a6;
   margin-bottom:8px;
-  color:#d9a6a6;
+}
+
+.title-cn{
+  font-size:17px;
+  margin-bottom:4px;
+}
+
+.title-en{
+  font-size:11px;
+  opacity:0.45;
+  letter-spacing:1px;
+  margin-bottom:14px;
 }
 
 /* 分割线 */
 .line{
-  width:40px;
+  width:36px;
   height:1px;
   background:#eee;
   margin:14px auto;
@@ -69,9 +81,9 @@ body{
   text-decoration:none;
   font-size:14px;
   border:1px solid #eee;
-  color:#333;
   background:#fafafa;
-  transition:0.25s ease;
+  color:#333;
+  transition:0.2s ease;
 }
 
 .btn:active{
@@ -79,49 +91,54 @@ body{
   background:#f0f0f0;
 }
 
+/* 韩语点缀 */
+.ko{
+  font-size:10px;
+  opacity:0.35;
+  margin-top:14px;
+}
+
 /* 底部 */
 .footer{
-  margin-top:18px;
+  margin-top:16px;
   font-size:10px;
   opacity:0.35;
   letter-spacing:1px;
 }
 
-/* 轻微呼吸动画（ins风关键） */
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(6px);}
+/* 动画 */
+@keyframes fade{
+  from{opacity:0; transform:translateY(8px);}
   to{opacity:1; transform:translateY(0);}
-}
-
-.card{
-  animation:fadeIn 0.6s ease-out;
 }
 </style>
 </head>
 
 <body>
 
-<div class="page">
+<div class="wrap">
 
-  <div class="title">wedding invitation</div>
-  <div class="sub">thank you for being with us</div>
+  <div class="top">婚礼影像 · wedding archive</div>
+  <div class="top-sub">thank you for coming · 감사합니다</div>
 
   <div class="card">
 
     <div class="icon">♡</div>
 
-    <div style="font-size:15px; margin-bottom:6px;">our day</div>
-    <div style="font-size:11px; opacity:0.45;">scan to watch our moments</div>
+    <div class="title-cn">答谢宴记录</div>
+    <div class="title-en">our wedding moments</div>
 
     <div class="line"></div>
 
     <a class="btn" href="https://weixin.qq.com/sph/App2bD5iXC" target="_blank">
-      wedding film
+      婚礼主视频 / main film
     </a>
 
     <a class="btn" href="https://weixin.qq.com/sph/A8GE2j928y" target="_blank">
-      family wishes
+      亲友祝福 / wishes
     </a>
+
+    <div class="ko">우리의 하루를 함께해주셔서 감사합니다</div>
 
   </div>
 
