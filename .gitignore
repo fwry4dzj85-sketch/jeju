@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+logs/*.log
+database/*.json
+papers/*.pdf
+output/*
+!output/.gitkeep
+!papers/.gitkeep
+!database/.gitkeep
+!logs/.gitkeep
