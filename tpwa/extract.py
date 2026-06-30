@@ -2,6 +2,10 @@ from __future__ import annotations
 
 import logging
 import re
+import shutil
+import subprocess
+import tempfile
+import zlib
 from pathlib import Path
 
 from .models import Paper, SentenceRecord
@@ -12,8 +16,8 @@ LOGGER = logging.getLogger(__name__)
 def read_pdf_text(pdf_path: Path) -> str:
     try:
         from pypdf import PdfReader
-    except ImportError as exc:  # pragma: no cover
-        raise RuntimeError("pypdf is required for PDF extraction. Install requirements.txt.") from exc
+    except ImportError:
+        return read_pdf_text_with_pdftotext(pdf_path)
 
     reader = PdfReader(str(pdf_path))
     pages: list[str] = []
@@ -23,6 +27,86 @@ def read_pdf_text(pdf_path: Path) -> str:
         except Exception as exc:  # pragma: no cover
             LOGGER.warning("Failed to extract page %s from %s: %s", page_number, pdf_path, exc)
     return "\n".join(pages)
+
+
+def read_pdf_text_with_pdftotext(pdf_path: Path) -> str:
+    if shutil.which("pdftotext"):
+        with tempfile.NamedTemporaryFile(suffix=".txt") as output:
+            subprocess.run(
+                ["pdftotext", "-layout", str(pdf_path), output.name],
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+            return Path(output.name).read_text(encoding="utf-8", errors="replace")
+
+    return read_pdf_text_from_content_streams(pdf_path)
+
+
+def read_pdf_text_from_content_streams(pdf_path: Path) -> str:
+    data = pdf_path.read_bytes()
+    pages: list[str] = []
+    for match in re.finditer(rb"stream\r?\n(.*?)\r?\nendstream", data, re.DOTALL):
+        try:
+            stream = zlib.decompress(match.group(1))
+        except zlib.error:
+            continue
+        if b"Tj" not in stream and b"TJ" not in stream:
+            continue
+        page_text = extract_text_operators(stream.decode("latin-1", errors="ignore"))
+        if page_text.strip():
+            pages.append(page_text)
+    if not pages:
+        raise RuntimeError("pypdf is required for PDF extraction. Install requirements.txt.")
+    return "\n".join(pages)
+
+
+def extract_text_operators(stream: str) -> str:
+    parts: list[str] = []
+    for match in re.finditer(r"\[(.*?)\]\s*TJ|\((.*?)\)\s*Tj|(?:Td|TD|Tm|T\*)", stream, re.DOTALL):
+        operator = match.group(0).rstrip()
+        if operator.endswith(("Td", "TD", "Tm", "T*")):
+            parts.append("\n")
+        elif match.group(1) is not None:
+            parts.append(decode_pdf_text_array(match.group(1)))
+        elif match.group(2) is not None:
+            parts.append(decode_pdf_string(match.group(2)))
+    return "".join(parts)
+
+
+def decode_pdf_text_array(array_body: str) -> str:
+    chunks: list[str] = []
+    token_pattern = r"\((?:\\.|[^\\)])*\)|[-+]?\d+(?:\.\d+)?"
+    for token in re.findall(token_pattern, array_body, re.DOTALL):
+        if token.startswith("("):
+            chunks.append(decode_pdf_string(token[1:-1]))
+        else:
+            try:
+                if float(token) < -100 and (not chunks or not chunks[-1].endswith(" ")):
+                    chunks.append(" ")
+            except ValueError:
+                continue
+    return "".join(chunks)
+
+
+def decode_pdf_string(value: str) -> str:
+    def replace_escape(match: re.Match[str]) -> str:
+        escaped = match.group(1)
+        if escaped in {"n", "r"}:
+            return "\n"
+        if escaped == "t":
+            return "\t"
+        if escaped == "b":
+            return "\b"
+        if escaped == "f":
+            return "\f"
+        if escaped in {"(", ")", "\\"}:
+            return escaped
+        if re.fullmatch(r"[0-7]{1,3}", escaped):
+            return chr(int(escaped, 8))
+        return escaped
+
+    return re.sub(r"\\([nrtbf()\\]|[0-7]{1,3})", replace_escape, value)
 
 
 def remove_references(text: str) -> str:

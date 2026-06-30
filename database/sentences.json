@@ -1,1 +1,107 @@
-[]
+[
+  {
+    "sentence_id": "sentence_7c53d5386c1f",
+    "paper_id": "paper_58c3e3e74c05",
+    "section": "",
+    "raw_sentence": "NSF-KITP-06-31 KUNS-2021 hep-th/0605073 May, 2006 Aspects of Holographic Entanglement Entropy Shinsei Ryu and Tadashi Takayanagi ; Kavli Institute for Theoretical Physics, University of Cal ifornia, Santa Barbara, CA 93106, USA Department of Physics, Kyoto University, Kyoto 606-8502, J apan Abstract This is an extended version of our short report hep-th/06030 01, where a holo- graphic interpretation of entanglement entropy in conform al eld theories is pro- posed from AdS/CFT correspondence.",
+    "clean_sentence": "NSF-KITP-06-31 KUNS-2021 hep-th/0605073 May, 2006 Aspects of Holographic Entanglement Entropy Shinsei Ryu and Tadashi Takayanagi ; Kavli Institute for Theoretical Physics, University of Cal ifornia, Santa Barbara, CA 93106, USA Department of Physics, Kyoto University, Kyoto 606-8502, J apan Abstract This is an extended version of our short report hep-th/06030 01, where a holo- graphic interpretation of entanglement entropy in conform al eld theories is pro- posed from AdS/CFT correspondence.",
+    "category": "Other",
+    "confidence": 0.5,
+    "reason": "No high-confidence rhetorical marker was detected.",
+    "keywords": [
+      "nsf-kitp-",
+      "kuns-",
+      "hep-th",
+      "aspects",
+      "holographic",
+      "entanglement",
+      "entropy",
+      "shinsei"
+    ],
+    "created_at": "2026-06-30T12:22:14.241402+00:00"
+  },
+  {
+    "sentence_id": "sentence_26a65f6a420f",
+    "paper_id": "paper_58c3e3e74c05",
+    "section": "",
+    "raw_sentence": "In addition to a concise review of relevant recent progresses of entanglement entropy and details omit ted in the earlier let- ter, this paper includes the following several new results : We give a more direct derivation of our claim which relates the entanglement entr opy with the minimal area surfaces in the AdS = CFT case as well as some further discussions on higher dimensional cases.",
+    "clean_sentence": "In addition to a concise review of relevant recent progresses of entanglement entropy and details omit ted in the earlier let- ter, this paper includes the following several new results : We give a more direct derivation of our claim which relates the entanglement entr opy with the minimal area surfaces in the AdS = CFT case as well as some further discussions on higher dimensional cases.",
+    "category": "Other",
+    "confidence": 0.5,
+    "reason": "No high-confidence rhetorical marker was detected.",
+    "keywords": [
+      "addition",
+      "concise",
+      "review",
+      "relevant",
+      "recent",
+      "progresses",
+      "entanglement",
+      "entropy"
+    ],
+    "created_at": "2026-06-30T12:22:14.241486+00:00"
+  },
+  {
+    "sentence_id": "sentence_f599b23c05c2",
+    "paper_id": "paper_58c3e3e74c05",
+    "section": "",
+    "raw_sentence": "Also the relation between the entanglem ent entropy and central charges in 4D conformal eld theories is examined.",
+    "clean_sentence": "Also the relation between the entanglem ent entropy and central charges in 4D conformal eld theories is examined.",
+    "category": "Other",
+    "confidence": 0.5,
+    "reason": "No high-confidence rhetorical marker was detected.",
+    "keywords": [
+      "also",
+      "relation",
+      "between",
+      "entanglem",
+      "ent",
+      "entropy",
+      "central",
+      "charges"
+    ],
+    "created_at": "2026-06-30T12:22:14.241514+00:00"
+  },
+  {
+    "sentence_id": "sentence_17db1572780e",
+    "paper_id": "paper_58c3e3e74c05",
+    "section": "",
+    "raw_sentence": "We check t hat the logarith- mic part of the 4D entanglement entropy computed in the CFT si de agrees with the AdS result at least under a speci c condition.",
+    "clean_sentence": "We check t hat the logarith- mic part of the 4D entanglement entropy computed in the CFT si de agrees with the AdS result at least under a speci c condition.",
+    "category": "Other",
+    "confidence": 0.5,
+    "reason": "No high-confidence rhetorical marker was detected.",
+    "keywords": [
+      "check",
+      "hat",
+      "logarith-",
+      "mic",
+      "part",
+      "entanglement",
+      "entropy",
+      "computed"
+    ],
+    "created_at": "2026-06-30T12:22:14.241545+00:00"
+  },
+  {
+    "sentence_id": "sentence_17207bcaf903",
+    "paper_id": "paper_58c3e3e74c05",
+    "section": "",
+    "raw_sentence": "Finally we estima te the en- tanglement entropy of massive theories in generic dimensio ns by making use of our proposal. e-mail: sryu@kitp.ucsb.edu e-mail: takayana@gauge.scphys.kyoto-u.ac.jp Moved from Kavli Institute for Theoretical Physics, Univer sity of California, Santa Barbara, CA 93106, USA",
+    "clean_sentence": "Finally we estima te the en- tanglement entropy of massive theories in generic dimensio ns by making use of our proposal. e-mail: sryu@kitp.ucsb.edu e-mail: takayana@gauge.scphys.kyoto-u.ac.jp Moved from Kavli Institute for Theoretical Physics, Univer sity of California, Santa Barbara, CA 93106, USA",
+    "category": "Transition",
+    "confidence": 0.82,
+    "reason": "The sentence signals a shift to a new part of the argument.",
+    "keywords": [
+      "finally",
+      "estima",
+      "en-",
+      "tanglement",
+      "entropy",
+      "massive",
+      "theories",
+      "generic"
+    ],
+    "created_at": "2026-06-30T12:22:14.241586+00:00"
+  }
+]
